@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>V8 UI Workflow</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article>
+      <section data-bespoke-hash="intro">
+        <h1>V8 UI Workflow</h1>
+        <h3>An overview of how we <span>roll</span></h3>
+            <iframe src="//s.codepen.io/OrganicPanda/debug/FLdDc?" frameborder="no" allowtransparency="true" allowfullscreen="true" class="codepen-embed"></iframe>
+      </section>
+      <section data-bespoke-hash="example">
+        <h2>Some CSS</h2>
+        <pre><code class="language-css">.foo {
+  bar: baz;
+}
+</code></pre>
+      </section>
+      <section data-bespoke-hash="typical">
+        <h1>Typical Workflow</h1>
+        <ul>
+          <li>Product demand</li>
+          <li>UX design</li>
+          <li>Dev develop</li>
+          <li>Dev demonstrate</li>
+          <li>UX decide</li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="modules">
+        <h1>Modules</h1>
+        <p>BEM</p>
+        <p>OOCSS</p>
+        <p>SMACSS</p>
+        <p>Atomic</p>
+        <p>Opt-in to styling <code>&lt;table class=&quot;table&quot;&gt;</code></p>
+        <p>Specialise <code>&lt;table class=&quot;table table-striped&quot;&gt;</code></p>
+        <p>Support global states <code>&lt;table class=&quot;table selectable&quot;&gt;</code> / <code>&lt;tr class=&quot;selected&quot;&gt;</code></p>
+        <p>Modules are a contract</p>
+      </section>
+      <section data-bespoke-hash="style-types">
+        <h1>Style Types</h1>
+        <p>layout</p>
+        <p>decoration</p>
+        <p>interaction</p>
+        <p>containers vs content</p>
+      </section>
+      <section data-bespoke-hash="problems">
+        <h1>Problems with non-modular</h1>
+        <ul>
+          <li>Unpredictable
+            <ul>
+              <li>Dev A implements <code>.button</code></li>
+              <li>Dev B uses <code>.button</code> but sneaks in <code>.homepage .button { padding 50px; }</code> because marketing want more clicks</li>
+              <li>Dev C tries to add a new button to the homepage</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>
