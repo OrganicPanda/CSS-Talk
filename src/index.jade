@@ -1,0 +1,67 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title V8 UI Workflow
+
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+  body
+    mixin codepen(id, height)
+      iframe(src='//s.codepen.io/OrganicPanda/debug/#{id}?',
+             frameborder='no',
+             allowtransparency='true',
+             allowfullscreen='true',
+             class='codepen-embed')
+
+    article
+      section(data-bespoke-hash='intro')
+        h1 V8 UI Workflow
+        h3 An overview of how we #[span roll]
+        +codepen('FLdDc')
+
+      section(data-bespoke-hash='example')
+        h2 Some CSS
+        pre
+          code.language-css.
+            .foo {
+              bar: baz;
+            }
+
+      section(data-bespoke-hash='typical')
+        h1 Typical Workflow
+        ul
+          li Product demand
+          li UX design
+          li Dev develop
+          li Dev demonstrate
+          li UX decide
+
+      section(data-bespoke-hash='modules')
+        h1 Modules
+        p BEM
+        p OOCSS
+        p SMACSS
+        p Atomic
+        p Opt-in to styling #[code= '<table class="table">']
+        p Specialise #[code= '<table class="table table-striped">']
+        p Support global states #[code= '<table class="table selectable">'] / #[code= '<tr class="selected">']
+        p Modules are a contract
+
+      section(data-bespoke-hash='style-types')
+        h1 Style Types
+        p layout
+        p decoration
+        p interaction
+        p containers vs content
+
+      section(data-bespoke-hash='problems')
+        h1 Problems with non-modular
+        ul
+          li Unpredictable
+            ul
+              li Dev A implements #[code= '.button']
+              li Dev B uses #[code= '.button'] but sneaks in #[code= '.homepage .button { padding 50px; }'] because marketing want more clicks
+              li Dev C tries to add a new button to the homepage
+
+    script(src='build/build.js')
