@@ -4,12 +4,10 @@
   "devDependencies": {
     "bespoke": "^1.0.0",
     "bespoke-backdrop": "^1.0.0",
-    "bespoke-bullets": "^1.0.0",
     "bespoke-forms": "^1.0.0",
     "bespoke-hash": "^1.0.0",
     "bespoke-keys": "^1.0.0",
     "bespoke-progress": "^1.0.0",
-    "bespoke-scale": "^1.0.0",
     "bespoke-theme-cube": "^2.0.0",
     "bespoke-touch": "^1.0.0",
     "debowerify": "^0.7.1",
