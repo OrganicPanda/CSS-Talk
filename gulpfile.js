@@ -9,7 +9,7 @@ var pkg = require('./package.json'),
   browserify = require('gulp-browserify'),
   uglify = require('gulp-uglify'),
   jade = require('gulp-jade'),
-  stylus = require('gulp-stylus'),
+  less = require('gulp-less'),
   autoprefixer = require('gulp-autoprefixer'),
   csso = require('gulp-csso'),
   del = require('del'),
@@ -39,12 +39,11 @@ gulp.task('html', ['clean:html'], function() {
 });
 
 gulp.task('css', ['clean:css'], function() {
-  return gulp.src('src/styles/main.styl')
+  return gulp.src('src/styles/main.less')
     .pipe(isDist ? through() : plumber())
-    .pipe(stylus({
-      // Allow CSS to be imported from node_modules and bower_components
-      'include css': true,
-      'paths': ['./node_modules', './bower_components']
+    .pipe(less({
+      paths: [ path.join(__dirname, 'node_modules'),
+               path.join(__dirname, 'bower_components') ]
     }))
     .pipe(autoprefixer('last 2 versions', { map: false }))
     .pipe(isDist ? csso() : through())
@@ -92,7 +91,7 @@ gulp.task('open', ['connect'], function (done) {
 
 gulp.task('watch', function() {
   gulp.watch('src/**/*.jade', ['html']);
-  gulp.watch('src/styles/**/*.styl', ['css']);
+  gulp.watch('src/styles/**/*.less', ['css']);
   gulp.watch('src/images/**/*', ['images']);
   gulp.watch([
     'src/scripts/**/*.js',

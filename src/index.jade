@@ -7,61 +7,25 @@ html
 
     link(rel='stylesheet', type='text/css', href='build/build.css')
   body
-    mixin codepen(id, height)
-      iframe(src='//s.codepen.io/OrganicPanda/debug/#{id}?',
-             frameborder='no',
-             allowtransparency='true',
-             allowfullscreen='true',
-             class='codepen-embed')
+    include ./_mixins.jade
 
     article
       section(data-bespoke-hash='intro')
-        h1 V8 UI Workflow
-        h3 An overview of how we #[span roll]
-        +codepen('FLdDc')
+        include ./_intro.jade
 
       section(data-bespoke-hash='example')
-        h2 Some CSS
-        pre
-          code.language-css.
-            .foo {
-              bar: baz;
-            }
+        include ./_example.jade
 
       section(data-bespoke-hash='typical')
-        h1 Typical Workflow
-        ul
-          li Product demand
-          li UX design
-          li Dev develop
-          li Dev demonstrate
-          li UX decide
+        include ./_typical.jade
 
       section(data-bespoke-hash='modules')
-        h1 Modules
-        p BEM
-        p OOCSS
-        p SMACSS
-        p Atomic
-        p Opt-in to styling #[code= '<table class="table">']
-        p Specialise #[code= '<table class="table table-striped">']
-        p Support global states #[code= '<table class="table selectable">'] / #[code= '<tr class="selected">']
-        p Modules are a contract
+        include ./_modules.jade
 
       section(data-bespoke-hash='style-types')
-        h1 Style Types
-        p layout
-        p decoration
-        p interaction
-        p containers vs content
+        include ./_style-types.jade
 
       section(data-bespoke-hash='problems')
-        h1 Problems with non-modular
-        ul
-          li Unpredictable
-            ul
-              li Dev A implements #[code= '.button']
-              li Dev B uses #[code= '.button'] but sneaks in #[code= '.homepage .button { padding 50px; }'] because marketing want more clicks
-              li Dev C tries to add a new button to the homepage
+        include ./_problems.jade
 
     script(src='build/build.js')
