@@ -1,7 +1,19 @@
 h1 Typical Workflow
-ul
-  li Product demand
-  li UX design
-  li Dev develop
-  li Dev demonstrate
-  li UX decide
+
+div.messages
+  +message('kaspar.jpeg', 'Morning!')
+  +message('manos.jpeg', 'Mate')
+  +message('frazer.jpeg', '@amy can you do the mockup for the thing')
+  +message('amy.jpeg', 'Sure! Here it is ...')
+    img.message-thumbnail(src="./images/happy-cat.jpg")
+
+  +message('steve.png', 'Thanks @amy! Here\'s what I\'ve done ...')
+    img.message-thumbnail(src="./images/grumpy-cat.jpg")
+
+  +message('amy.jpeg', 'I\'m not sure about that')
+  +message('steve.png', 'OK what about')
+    img.message-thumbnail(src="./images/other-happy-cat.jpg")
+
+  +message('amy.jpeg', 'giphy looks good')
+  +message('wall-e.jpg', '')
+    img.message-thumbnail(src="./images/high-five.gif")

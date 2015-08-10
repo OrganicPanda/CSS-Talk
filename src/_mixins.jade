@@ -4,3 +4,11 @@ mixin codepen(id, height)
          allowtransparency='true',
          allowfullscreen='true',
          class='codepen-embed')
+
+mixin message(avatar, message)
+  div.message
+    img.message-avatar(src="./images/#{avatar}")
+    div.message-text
+      span= message
+      if block
+        block
