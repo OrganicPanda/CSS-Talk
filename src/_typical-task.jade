@@ -1,0 +1,16 @@
+h1 Typical Task
+
+div.messages
+  +message('frazer.jpeg', '@amy do you have that mockup for the cats page?')
+  +message('amy.jpeg', 'Here it is ... ')
+    img.message-thumbnail(src="./images/cats-mockup.jpg")
+
+  +message('steve.png', 'Thanks @amy! We don\'t have any Cats in the Pattern Library.')
+  +message('steve.png', 'UI-Bootstrap has Dogs and Bootstrap has a Gorilla, do either of those work for you? ')
+    img.message-thumbnail(src="./images/gorilla.jpg")
+
+  +message('amy.jpeg', 'No, I think we need real cats here')
+  +message('steve.png', 'OK what about')
+    img.message-thumbnail(src="./images/cats-group.jpg")
+
+  +message('amy.jpeg', 'Perfect!')
